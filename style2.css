@@ -1782,3 +1782,8 @@
     width: 100% !important;
   }
 }
+
+
+.SVGInline-svg.pypi path {
+    fill: #999;
+}
