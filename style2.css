@@ -1784,6 +1784,6 @@
 }
 
 
-.SVGInline-svg.pypi path {
+.SVGInline-svg.pypi path, .SVGInline-svg.gitlab path {
     fill: #999;
 }
