@@ -119,9 +119,9 @@
                       <span class="roles"
                         ><span class="role">Software Engineer</span>,
                         <!-- -->
-                        <span class="role">Web Developer</span>,
+                        <span class="role">Frontend Engineer</span>,
                         <!-- -->
-
+                        <span class="role">QA Engineer</span>,
                         <!-- -->and
                         <span class="role">Technical Writer</span></span
                       >
@@ -145,9 +145,10 @@
                           <!-- -->
                           <span class="role">Software Engineer</span>,
 
-                          <!-- -->
-                          <span class="role">Web Developer</span>,
-                          <!-- -->and <span class="role">Writer</span></span
+                          <span class="role">Frontend Engineer</span>,
+                        <!-- -->
+                        <span class="role">QA Engineer</span>,
+                          <!-- -->and <span class="role">Technical Writer</span></span
                         >
                         <span class="location"
                           >in <span class="location">Lagos, Nigeria</span></span
@@ -168,7 +169,7 @@
                   <section class="bio inset">
                     <div>
                       <p>
-                        Howdy, I’m Oyetoke. I’m a software engineer living in
+                        Howdy, I’m Oyetoke. A <strong><span id="title">Software engineer</span></strong> living in
                         Lagos, Nigeria. I am into technology, design, and
                         programming. I’m also interested in video animation and
                         writing. Here's my <a href="https://drive.google.com/file/d/11qjJS48Zdmx2QzklkbCFiy4aPdYtcJi-/view?usp=sharing" target="_blank"><strong>resume</strong></a>. You can read my articles with a click on the
@@ -414,6 +415,15 @@
           cWidth.setAttribute("max-width-801", false);
         }
       }
+      var blink_speed = 3000;
+      var titleArray = ['Software Engineer', 'Frontend Engineer', 'QA Engineer'];
+      var count=0;
+      var t = setInterval(function () {
+          var elem = document.querySelector("span#title");
+          elem.innerHTML = titleArray[count++];
+          if(count===titleArray.length)
+            count=0;
+      }, blink_speed);
     </script>
   </body>
 </html>

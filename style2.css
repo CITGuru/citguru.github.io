@@ -1787,3 +1787,7 @@
 .SVGInline-svg.pypi path, .SVGInline-svg.gitlab path {
     fill: #999;
 }
+
+span#title {
+  transition: all .5s .5s ease-in-out;
+}
