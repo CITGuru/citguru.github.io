@@ -88,9 +88,10 @@
       href="https://cdn.about.me/s3/h/favicon/favicon_192.ff6ea21d.png"
       sizes="192x192"
     />
-    <link rel="stylesheet" href="https://use.typekit.net/geu7rrs.css" />
+    <link rel="stylesheet" href="./bulma.css" />
     <link rel="stylesheet" href="./style1.css" />
     <link rel="stylesheet" href="./style2.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
@@ -157,14 +158,18 @@
                     </section>
                   </section>
                   <section class="spotlight inset">
-                    <a
+                    <!-- <a
                       href="https://medium.com/@oyetoketoby80"
                       target="_blank"
                       rel="nofollow noopener noreferrer"
                       class="button xlarge dark primary glyph-doc"
                       style="background-color:#6C45C4;border-color:#6C45C4"
                       ><span class="text ellipsis">Read my articles</span></a
-                    >
+                    > -->
+                    <button id="trigger" class="button xlarge dark primary glyph-doc"
+                    style="background-color:#6C45C4;border-color:#6C45C4">
+                    <span class="text ellipsis">Read my articles</span>
+                  </button>
                   </section>
                   <section class="bio inset">
                     <div>
@@ -172,7 +177,7 @@
                         Howdy, I’m Oyetoke. A <strong><span id="title">Software engineer</span></strong> living in
                         Lagos, Nigeria. I am into technology, design, and
                         programming. I build frontends with simplicity and empathy. I’m also interested in video animation and
-                        writing. Here's my <a href="https://drive.google.com/file/d/11qjJS48Zdmx2QzklkbCFiy4aPdYtcJi-/view?usp=sharing" target="_blank"><strong>resume</strong></a>. You can read my articles with a click on the
+                        writing. Here's my <a href="https://drive.google.com/file/d/11qjJS48Zdmx2QzklkbCFiy4aPdYtcJi-/view?usp=sharing" target="_blank"><strong>resume</strong></a>. You can learn more about me with a click on the
                         button above.
                       </p>
                     </div>
@@ -399,7 +404,42 @@
           </div>
         </div>
         <div class="viewer_panel-scope-258yz"></div>
+        
+    
       </main>
+    </div>
+    <div class="cmodal">
+      <div class="cmodal-content">
+        <section class="hero">
+          <div class="hero-head">
+            <div class="container">
+              <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                  <a class="navbar-item" href="citguru.github.io" title="Click me!">🧙</a>
+                  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+                </div>
+                <div class="navbar-menu tabs">
+                  <div class="navbar-end">
+                    <a class="navbar-item is-tab is-active" href="/">About</a>
+                    <a class="navbar-item is-tab" href="/#projects">Projects</a>
+                    <a class="navbar-item is-tab" href="/donate">Donate</a>
+                    <a class="navbar-item is-tab" href="/contact">Contact</a>
+                    <a class="navbar-item is-tab" href="/contact">Hire</a>
+                    <a class="navbar-item is-tab" href="https://blog.sindresorhus.com">Blog</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </section>
+          <span class="close-button">&times;</span>
+
+          
+      </div>
     </div>
     <script>
       window.onload = resize;
@@ -424,6 +464,24 @@
           if(count===titleArray.length)
             count=0;
       }, blink_speed);
+      
+      var modal = document.querySelector(".cmodal");
+      var trigger = document.querySelector("#trigger");
+      var closeButton = document.querySelector(".close-button");
+
+      function toggleModal() {
+          modal.classList.toggle("show-modal");
+      }
+
+      function windowOnClick(event) {
+          if (event.target === modal) {
+              toggleModal();
+          }
+      }
+
+      trigger.addEventListener("click", toggleModal);
+      closeButton.addEventListener("click", toggleModal);
+      window.addEventListener("click", windowOnClick);
     </script>
   </body>
 </html>
