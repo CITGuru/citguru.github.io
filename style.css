@@ -11,6 +11,7 @@
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
   z-index: 9999999;
   font-size: 1rem;
+  overflow: auto;
 }
 .cmodal-content {
   position: absolute;
@@ -43,4 +44,31 @@
 
 .button {
   height: unset;
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
+.btn-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.btn-float-icon {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 20px;
+  display: block;
+}
+
+#about .hero-body {
+  margin-bottom: 15px;
 }

@@ -436,7 +436,7 @@
             </div>
           </div>
         </section>
-        <section id="home" class="hero is-white is-fullheight">
+        <section id="about" class="hero is-white is-fullheight">
 
         <!-- Navbar -->
         <div class="hero-body">
@@ -453,22 +453,14 @@
 
                     </div>
                 </div>
-                
+                <h4 class="subtitle is-4 has-text-weight-light has-text-centered arrow bounce">
+                  Check my work! <i class="em em-point_down"></i>
+                </h4>
             </div>
         </div>
 
-        <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth">
-                <div class="container">
-                    <h4 class="subtitle is-4 has-text-weight-light has-text-centered arrow bounce">
-                        Check my work! <i class="em em-point_down"></i>
-                    </h4>
-                </div>
-            </nav>
-        </div>
-
     </section>
-      <span class="close-button">&times;</span>
+      <span class="close-button btn-float button is-link"><span class="btn-float-icon">&times;</span></span>
 
           
       </div>
@@ -565,11 +557,6 @@
               new TxtRotate(elements[i], JSON.parse(toRotate), period);
             }
           }
-          // INJECT CSS
-          var css = document.createElement("style");
-          css.type = "text/css";
-          css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-          document.body.appendChild(css);
         };
     </script>
   </body>
