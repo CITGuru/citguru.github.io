@@ -89,6 +89,7 @@
       sizes="192x192"
     />
     <link rel="stylesheet" href="./bulma.css" />
+    <link rel="stylesheet" href="./emoji.css" />
     <link rel="stylesheet" href="./style1.css" />
     <link rel="stylesheet" href="./style2.css" />
     <link rel="stylesheet" href="./style.css" />
@@ -168,7 +169,7 @@
                     > -->
                     <button id="trigger" class="button xlarge dark primary glyph-doc"
                     style="background-color:#6C45C4;border-color:#6C45C4">
-                    <span class="text ellipsis">Read my articles</span>
+                    <span class="text ellipsis">Learn More</span>
                   </button>
                   </section>
                   <section class="bio inset">
@@ -177,7 +178,7 @@
                         Howdy, I’m Oyetoke. A <strong><span id="title">Software engineer</span></strong> living in
                         Lagos, Nigeria. I am into technology, design, and
                         programming. I build frontends with simplicity and empathy. I’m also interested in video animation and
-                        writing. Here's my <a href="https://drive.google.com/file/d/11qjJS48Zdmx2QzklkbCFiy4aPdYtcJi-/view?usp=sharing" target="_blank"><strong>resume</strong></a>. You can learn more about me with a click on the
+                        ui/ux design. Here's my <a href="https://drive.google.com/file/d/11qjJS48Zdmx2QzklkbCFiy4aPdYtcJi-/view?usp=sharing" target="_blank"><strong>resume</strong></a>. You can learn more about me with a click on the
                         button above.
                       </p>
                     </div>
@@ -422,27 +423,61 @@
                     <span aria-hidden="true"></span>
                   </a>
                 </div>
-                <div class="navbar-menu tabs">
+                <div class="navbar-menu">
                   <div class="navbar-end">
                     <a class="navbar-item is-tab is-active" href="/">About</a>
                     <a class="navbar-item is-tab" href="/#projects">Projects</a>
-                    <a class="navbar-item is-tab" href="/donate">Donate</a>
                     <a class="navbar-item is-tab" href="/contact">Contact</a>
                     <a class="navbar-item is-tab" href="/contact">Hire</a>
-                    <a class="navbar-item is-tab" href="https://blog.sindresorhus.com">Blog</a>
+                    <a class="navbar-item is-tab" href="https://medium.com/@oyetoketoby80">Blog</a>
                   </div>
                 </div>
               </nav>
             </div>
           </div>
         </section>
-          <span class="close-button">&times;</span>
+        <section id="home" class="hero is-white is-fullheight">
+
+        <!-- Navbar -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns">
+                    <div class="column is-half is-offset-one-quarter">
+                        <h1 class="subtitle is-2 has-text-weight-light">
+                            <strong><span class="txt-rotate" data-period="200" data-rotate="[ &quot;Hello !&quot;, &quot;How far !&quot;,  &quot;Bawo ni !&quot;]"><span class="wrap">Bonjour</span></span></strong>
+                            <i class="em em-raised_hand_with_fingers_splayed"></i>
+                        </h1>
+                        <h3 class="subtitle is-3 has-text-justified has-text-weight-light">
+                            I'm a software engineer, frontend engineer, computer science  <i class="em em-male-technologist"></i> student
+                            interested in UI/UX Design and Video Animation <i class="em em-art"></i>
+                        </h3>
+                        <h4 class="subtitle is-4 has-text-weight-light">
+                            I am also a freelancer, so I am up for any gig.
+                        </h4>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <h4 class="subtitle is-4 has-text-weight-light has-text-centered arrow bounce">
+                        Check my work! <i class="em em-point_down"></i>
+                    </h4>
+                </div>
+            </nav>
+        </div>
+
+    </section>
+      <span class="close-button">&times;</span>
 
           
       </div>
     </div>
     <script>
-      window.onload = resize;
+      // window.onload = resize;
       window.onresize = resize;
       var cWidth = document.querySelector("#cWidth");
       function resize() {
@@ -456,7 +491,7 @@
         }
       }
       var blink_speed = 3000;
-      var titleArray = ['Frontend Engineer', 'QA Engineer','Software Engineer'];
+      var titleArray = ['Frontend Engineer', 'Computer Science student', 'Software Engineer'];
       var count=0;
       var t = setInterval(function () {
           var elem = document.querySelector("span#title");
@@ -482,6 +517,63 @@
       trigger.addEventListener("click", toggleModal);
       closeButton.addEventListener("click", toggleModal);
       window.addEventListener("click", windowOnClick);
+      var TxtRotate = function (el, toRotate, period) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.period = parseInt(period, 10) || 2000;
+          this.txt = '';
+          this.tick();
+          this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function () {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
+
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+
+          this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+          var that = this;
+          var delta = 300 - Math.random() * 100;
+
+          if (this.isDeleting) { delta /= 2; }
+
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+
+          setTimeout(function () {
+            that.tick();
+          }, delta);
+        };
+
+        window.onload = function () {
+          resize();
+          var elements = document.getElementsByClassName('txt-rotate');
+          for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+          }
+          // INJECT CSS
+          var css = document.createElement("style");
+          css.type = "text/css";
+          css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+          document.body.appendChild(css);
+        };
     </script>
   </body>
 </html>
