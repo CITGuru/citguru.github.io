@@ -1261,13 +1261,14 @@
                     class="navbar-burger"
                     aria-label="menu"
                     aria-expanded="false"
+                    onclick="showMenu();"
                   >
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                   </a>
                 </div>
-                <div class="navbar-menu">
+                <div class="navbar-menu" id="nvMenu">
                   <div class="navbar-end">
                     <a class="navbar-item is-tab is-active" onclick="togglePage('home');" href="/">About</a>
                     <a class="navbar-item is-tab" target="_blank" href="https://drive.google.com/file/d/1IvynOUrjbmLASwm9sGe-250QhDwEljmH/view?usp=sharing">Projects</a>
@@ -1341,6 +1342,10 @@
         const pG = document.querySelector(page)
         pG.classList.toggle("active")
       }
+      var showMenu = () => {
+          const menu = document.querySelector("#nvMenu")
+          menu.classList.toggle("is-active")
+        }
       var cWidth = document.querySelector("#cWidth");
       function resize() {
         let width = document.body.clientWidth;
