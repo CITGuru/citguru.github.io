@@ -72,3 +72,11 @@
 #about .hero-body {
   margin-bottom: 15px;
 }
+
+.inpage .columns {
+  display: none;
+}
+
+.inpage .columns.active {
+  display: block;
+}

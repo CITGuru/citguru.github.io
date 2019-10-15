@@ -123,7 +123,7 @@
                         <!-- -->
                         <span class="role">Frontend Engineer</span>,
                         <!-- -->
-                        <span class="role">QA Engineer</span>,
+                        <span class="role">Backend Engineer</span>,
                         <!-- -->and
                         <span class="role">Technical Writer</span></span
                       >
@@ -188,7 +188,7 @@
                         empathy. I’m also interested in video animation and
                         ui/ux design. Here's my
                         <a
-                          href="https://drive.google.com/file/d/11qjJS48Zdmx2QzklkbCFiy4aPdYtcJi-/view?usp=sharing"
+                          href="https://drive.google.com/file/d/1IvynOUrjbmLASwm9sGe-250QhDwEljmH/view?usp=sharing"
                           target="_blank"
                           ><strong>resume</strong></a
                         >. You can learn more about me with a click on the
@@ -201,7 +201,7 @@
                       <li class="meta-section jobs">
                         <div class="meta-header">Work</div>
                         <ul class="meta-list">
-                          <li class="meta-item">Diamond Acre Software</li>
+                          <li class="meta-item">Up For Hiring</li>
                         </ul>
                       </li>
                       <li class="meta-section schools">
@@ -1269,10 +1269,10 @@
                 </div>
                 <div class="navbar-menu">
                   <div class="navbar-end">
-                    <a class="navbar-item is-tab is-active" href="/">About</a>
-                    <a class="navbar-item is-tab" href="/#projects">Projects</a>
-                    <a class="navbar-item is-tab" href="/contact">Contact</a>
-                    <a class="navbar-item is-tab" href="/contact">Hire</a>
+                    <a class="navbar-item is-tab is-active" onclick="togglePage('home');" href="/">About</a>
+                    <a class="navbar-item is-tab" target="_blank" href="https://drive.google.com/file/d/1IvynOUrjbmLASwm9sGe-250QhDwEljmH/view?usp=sharing">Projects</a>
+                    <a class="navbar-item is-tab" onclick="togglePage('#contact-pg');">Contact</a>
+                    <!-- <a class="navbar-item is-tab" href="/contact">Hire</a> -->
                     <a
                       class="navbar-item is-tab"
                       href="https://medium.com/@oyetoketoby80"
@@ -1287,8 +1287,8 @@
         <section id="about" class="hero is-white is-fullheight">
           <!-- Navbar -->
           <div class="hero-body">
-            <div class="container has-text-centered">
-              <div class="columns">
+            <div class="container has-text-centered inpage">
+              <div class="columns active" id="home">
                 <div class="column is-half is-offset-one-quarter">
                   <h1 class="subtitle is-2 has-text-weight-light">
                     <strong
@@ -1302,20 +1302,27 @@
                     <i class="em em-raised_hand_with_fingers_splayed"></i>
                   </h1>
                   <p>
-                    I’m a computer science student living in lagos. I started
-                    learning how to code in 2012 and I started my career in 2014
-                    as web developer and since then I have worked with various
-                    startups to help them build and scale their products.
+                   Software Engineer. Ex DAS. Open Sourcerer. Anime Lover. Foodie 
                   </p>
 
-                  <p>I'm a freelancer, so I am up for any gig.</p>
+                  <p>I'm a also freelancer, so I am up for any gig.</p>
                 </div>
               </div>
+              <div class="columns" id="contact-pg">
+                <div class="column is-half is-offset-one-quarter">
+                  <h3>Email: oyetoketoby80@gmail.com</h3>
+                  <h3>Phone: +2348155737518</h3>
+                  <h3>Twitter: http://twitter.com/@OyetokeT</h3>
+                  <h3>LinkedIn: http://linkedin.com/in/oyetoke-toby</h3>                  
+                </div>
+              </div>
+              <a href="https://gist.github.com/CITGuru/f41bac84f3ea559ec8398dbf6c045143" target="_blank">
               <h4
                 class="subtitle is-4 has-text-weight-light has-text-centered arrow bounce"
               >
+
                 Check my work! <i class="em em-point_down"></i>
-              </h4>
+              </h4></a>
             </div>
           </div>
         </section>
@@ -1327,6 +1334,13 @@
     <script>
       // window.onload = resize;
       window.onresize = resize;
+      var togglePage = (page) =>{
+        document.querySelectorAll(".inpage .columns").forEach((d)=>{
+          d.classList.remove("active")
+        })
+        const pG = document.querySelector(page)
+        pG.classList.toggle("active")
+      }
       var cWidth = document.querySelector("#cWidth");
       function resize() {
         let width = document.body.clientWidth;
@@ -1341,8 +1355,9 @@
       var blink_speed = 3000;
       var titleArray = [
         "Frontend Engineer",
-        "Computer Science student",
-        "Software Engineer"
+        "Backend Engineer",
+        "Software Engineer",
+        "Technical Writer",
       ];
       var count = 0;
       var t = setInterval(function() {
